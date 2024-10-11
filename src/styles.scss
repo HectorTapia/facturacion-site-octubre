@@ -1,1 +1,163 @@
 /* You can add global styles to this file, and also import other style files */
+// Estilos para el contenedor principal
+@import 'ngx-toastr/toastr';
+
+
+ul {
+    list-style-type: none; // Elimina los puntos de la lista
+    padding: 0; // Elimina el padding por defecto
+    margin: 20px 0; // Margen superior e inferior
+  
+    li {
+      background-color: #f9f9f9; // Color de fondo de cada item
+      border: 1px solid #ddd; // Borde alrededor de cada item
+      border-radius: 5px; // Bordes redondeados
+      padding: 15px; // Padding interno
+      margin-bottom: 10px; // Margen inferior entre items
+      transition: background-color 0.3s; // Transición suave para el hover
+  
+      &:hover {
+        background-color: #eaeaea; // Color de fondo al pasar el mouse
+      }
+  
+      div {
+        margin-bottom: 10px; // Espaciado entre los divs
+  
+        strong {
+          color: #333; // Color del texto fuerte
+        }
+      }
+  
+      // Estilos para los botones
+      .btnDel, .btnEdit, .btnSave {
+        padding: 8px 12px; // Padding para los botones
+        margin-right: 10px; // Margen entre botones
+        border: none; // Sin borde
+        border-radius: 4px; // Bordes redondeados
+        cursor: pointer; // Cambia el cursor al pasar sobre el botón
+        font-size: 14px; // Tamaño de fuente
+  
+        &.btnDel {
+          background-color: #f44336; // Color de fondo para el botón de eliminar
+          color: white; // Color del texto
+          
+          &:hover {
+            background-color: #d32f2f; // Color al pasar el mouse
+          }
+        }
+  
+        &.btnEdit {
+          background-color: #2196F3; // Color de fondo para el botón de editar
+          color: white; // Color del texto
+  
+          &:hover {
+            background-color: #1976D2; // Color al pasar el mouse
+          }
+        }
+      }
+    }
+  }
+  
+  // Estilos para el encabezado y botón de volver
+  p {
+    font-size: 24px; // Tamaño de fuente del título
+    font-weight: bold; // Negrita
+    margin-bottom: 20px; // Margen inferior
+  }
+  
+  button {
+    padding: 8px 15px; // Padding para el botón de volver
+    background-color: #4CAF50; // Color de fondo
+    color: white; // Color del texto
+    border: none; // Sin borde
+    border-radius: 4px; // Bordes redondeados
+    cursor: pointer; // Cambia el cursor al pasar sobre el botón
+  
+    &:hover {
+      background-color: #45a049; // Color al pasar el mouse
+    }
+  }
+
+// Estilos generales para el formulario
+form {
+  max-width: 600px;
+  margin: 20px auto; // Centrar el formulario
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  background-color: #f9f9f9; // Color de fondo suave
+
+  h2 {
+    text-align: center;
+    color: #333; // Color del texto
+    margin-bottom: 20px; // Espaciado inferior
+  }
+
+  div {
+    margin-bottom: 15px; // Espaciado entre campos
+
+    label {
+      display: block; // Hacer que la etiqueta ocupe toda la línea
+      font-weight: bold;
+      margin-bottom: 5px; // Espaciado inferior
+      color: #555; // Color de las etiquetas
+    }
+
+    input {
+      width: 100%; // Ancho completo
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      transition: border-color 0.3s;
+
+      &:focus {
+        border-color: #007bff; // Color del borde al enfocar
+        outline: none; // Quitar el contorno por defecto
+      }
+
+      &[required]:invalid {
+        border-color: red; // Color del borde si el campo es inválido
+      }
+    }
+  }
+
+  button {
+    display: block; // Hacer que el botón ocupe toda la línea
+    width: 100%; // Ancho completo
+    padding: 10px;
+    background-color: #007bff; // Color de fondo
+    color: white; // Color del texto
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+
+    &.btnSave {
+      &:hover {
+        background-color: darken(#007bff, 10%); // Color más oscuro al pasar el mouse
+      }
+
+      &:disabled {
+        background-color: #ccc; // Color de fondo al deshabilitar
+        cursor: not-allowed; // Cambiar el cursor al deshabilitar
+      }
+    }
+  }
+}
+
+// Estilos para el botón "Volver"
+button[routerLink] {
+  margin-bottom: 20px; // Espaciado inferior
+  padding: 10px 15px;
+  background-color: #f0f0f0;
+  color: #333;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  cursor: pointer;
+
+  &:hover {
+    background-color: #e0e0e0; // Color de fondo al pasar el mouse
+  }
+}

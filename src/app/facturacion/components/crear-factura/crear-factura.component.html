@@ -1,0 +1,35 @@
+<h2 *ngIf="!isUpdate">Crear nuevo factura</h2>
+<h2 *ngIf="isUpdate">Editar factura</h2>
+
+
+
+<button routerLink='home'>Volver</button><br /><br />
+
+
+<span *ngIf="!isLoading" class="loader"></span>
+<form *ngIf="isLoading" [formGroup]="facturaForm" (ngSubmit)="onSubmit()">
+    <div>
+        <label for="fecha">Fecha: </label>
+        <input type="date" id="fecha" name="fecha" formControlName="fecha" required />
+    </div>  
+    <div>
+        <label for="monto">Monto: </label>
+        <input type="text" id="monto" name="monto" formControlName="monto" required />
+    </div>
+    <div>
+        <label for="detalle">Detalle </label>
+        <input type="text" id="detalle" name="detalle" formControlName="detalle" required />
+    </div>
+    <div>
+        <label for="cliente">Id del cliente: </label>
+        <input type="text" id="cliente" name="cliente" formControlName="cliente" required />
+    </div>
+
+    <button *ngIf="!isUpdate" class="btnSave" type="submit" [disabled]="facturaForm.invalid">
+        <p>Guardar</p>  
+    </button>
+    <button *ngIf="isUpdate" class="btnSave" type="submit" [disabled]="facturaForm.invalid">
+        <p>Actualizar</p>  
+    </button>
+
+</form>

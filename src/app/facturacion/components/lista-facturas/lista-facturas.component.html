@@ -1,0 +1,35 @@
+<p>Facturas Activas</p>
+
+<button (click)="regresarHome()">
+    Volver
+</button><br>
+<span *ngIf="!isLoading" class="loader"></span>
+
+<ul *ngIf="isLoading">
+    <li *ngFor="let factura of facturas">
+    <div>
+        <strong>Fecha: </strong> {{factura.fecha}}
+        </div>
+        <div>
+            <strong>Monto: </strong> {{factura.monto}}
+        </div>
+        <div>
+            <strong>Detalle: </strong> {{factura.detalle}}
+        </div>
+        <div>
+            <strong>Id del cliente: </strong> {{factura.cliente.id}}
+        </div>
+        <div>
+            <strong>Nombre del cliente: </strong> {{factura.cliente.nombre}}
+        </div>
+        <div>
+            <strong>Número de teléfono: </strong> {{factura.cliente.numeroTelefono}}
+        </div>
+        <button class="btnDel" (click)="eliminarFactura(factura)">
+            Eliminar
+        </button>
+        <button class="btnEdit" (click)="editarFactura(factura)">
+            Editar
+        </button>
+    </li>
+</ul>

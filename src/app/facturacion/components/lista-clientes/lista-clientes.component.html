@@ -1,0 +1,27 @@
+<p>Clientes Activos</p>
+
+<button (click)="regresarHome()">
+    Volver
+</button><br>
+
+<div *ngIf="isLoading" class="loader"></div>
+
+<ul *ngIf="!isLoading">
+    <li   *ngFor="let cliente of clientes">
+    <div>
+        <strong>Nombre:  </strong> {{cliente.nombre}}
+    </div>
+    <div>
+        <strong>Numero de telefono:  </strong> {{cliente.numeroTelefono}}
+    </div>
+    <div>
+        <strong>Dia de creacion:  </strong>  {{cliente.diaCreacion}}
+    </div>
+    <button class="btnDel" (click)="eliminarCliente(cliente)">
+        Eliminar
+    </button>
+    <button class="btnEdit" (click)="editarCliente(cliente)">
+        Editar
+    </button>
+    </li>
+</ul>
